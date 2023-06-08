@@ -11,7 +11,7 @@ interface Item {
       title: 'Apple iPhone 14 Pro',
       price: 1000,
       description: 'A16 Bionic, 6.7-inch Super Retina XDR display, 1TB',
-      image: '../public/iPhone.webp',
+      image: 'iPhone.webp',
       quantity: 0
     },
     {
