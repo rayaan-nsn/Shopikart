@@ -1,6 +1,6 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
-import { useState } from "react";
+import {useState} from "react";
 import items from "./items";
 
 function App() {
@@ -63,44 +63,64 @@ function App() {
 
   function clearCart() {
     setCart([]);
-    setCounts(Array(items.length).fill(0));
+    setCounts(Array(items.length).fill(1));
     setTotal(0);
   }
 
   return (
-    <>
-      <div className="text-center p-5">
-        <div className="row align-items-start">
-          <div className="col bg-secondary-subtle">
-            <h1>Items Section</h1>
-            {items.map((item, index) => (
-              <div key={index} className="d-flex m-4 bg-light p-2">
-                <img src={item.image} alt="" />
-                <div>
-                  <h1>{item.title}</h1>
-                  <p>{item.description}</p>
-                  <h2>{item.price}</h2>
-                  <button className="btn btn-warning" onClick={() => {addToCart(item)}}>Add to Cart</button>
-                </div>
+      <>
+        <div className="text-center overflow-hidden">
+          {/*<h1 className="m-3">Shopikart</h1>*/}
+          <img className="" src="../public/logo.png" style={{height:"80px"}}/>
+          <div className="row align-items-start">
+            <div className="col-8 p-0 m-0" style={{width:"70%"}}>
+              <div className="row m-auto">
+                {items.map((item, index) => (
+                    <div key={index} className="col-6" style={{paddingRight: "0"}}>
+                      <div className="d-flex m-2 p-2 text-start overflow-scroll border border-1"
+                           style={{height: "25vh"}}>
+                        <img className="object-fit-contain" src={item.image} alt=""
+                             style={{maxHeight: "100%", maxWidth: "50%"}}/>
+                        <div className="p-2 w-100">
+                          <h4>{item.title}</h4>
+                          <p className="fw-light">{item.description}</p>
+                          <div className="d-flex justify-content-between">
+                            <h5>${item.price}</h5>
+                            <button className="btn btn-warning btn-sm" onClick={() => addToCart(item)}>
+                              Add to Cart
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                ))}
               </div>
-            ))}
-          </div>
-          <div className="col bg-warning-subtle">
-            <h1>Cart Section</h1>
-            {cart.map((item, index) => (
-              <div key={index}>
-                <div className="d-flex">
-                  <p>{item.title}</p>
-                  <button className="btn btn-secondary" onClick={() => decrement(index)}> - </button>
-                  <h1>{counts[index]}</h1>
-                  <button className="btn btn-info" onClick={() => increment(index)}> + </button>
-                  <button onClick={() => removeFromCart(index)}>Remove</button>
+            </div>
+
+
+            <div className="col-3 bg-body-tertiary m-auto p-0" style={{border:"2px"}}>
+              <h3 className="bg-dark-subtle p-2">Cart</h3>
+              <div style={{height:"55vh"}}>
+              {cart.map((item, index) => (
+                <div className="w-100" key={index}>
+                  <div className="d-flex justify-content-between align-items-center m-2" style={{ border: "1px solid black", padding: "0.5rem" }}>
+                    <h6 className="m-0 text-start">{item.title}<br /><span>${item.price}</span></h6>
+                    <div className="d-flex bg-light-subtle" style={{}}>
+                      <button className="m-0" onClick={() => decrement(index)}> -</button>
+                      <p className="m-0">&nbsp;&nbsp;{counts[index]}&nbsp;&nbsp;</p>
+                      <button className="m-0" onClick={() => increment(index)}> +</button>
+                      <button className="m-0" onClick={() => removeFromCart(index)}>R</button>
+                    </div>
+                  </div>
                 </div>
+              ))}
+                </div>
+              <div className=" text-center">
+                <h4>Total: ${total}</h4>
+                <button className="btn btn-outline-success w-75">Checkout</button>
+                <p className="m-2 text-danger" onClick={clearCart}>Clear Cart</p>
               </div>
-            ))}
-            <h2>Total: ${total}</h2>
-            <button onClick={clearCart}>Clear Cart</button>
-          </div>
+            </div>
         </div>
       </div>
     </>

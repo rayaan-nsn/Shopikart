@@ -8,24 +8,45 @@ interface Item {
   
   const items: Item[] = [
     {
-      title: 'Product 1',
-      price: 100,
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Tortor id aliquet lectus proin. Id leo in vitae turpis massa sed elementum tempus egestas. Vitae congue mauris rhoncus aenean vel. Gravida cum sociis natoque penatibus et magnis dis parturient montes.',
-      image: 'https://picsum.photos/300?seed=1',
+      title: 'Apple iPhone 14 Pro',
+      price: 1000,
+      description: 'A16 Bionic, 6.7-inch Super Retina XDR display, 1TB',
+      image: '../public/iPhone.webp',
       quantity: 0
     },
     {
-      title: 'Product 2',
-      price: 200,
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim eu turpis egestas pretium aenean. Egestas sed tempus urna et pharetra pharetra massa. Consequat semper viverra nam libero justo. Morbi enim nunc faucibus a.',
-      image: 'https://picsum.photos/300?seed=2',
+      title: 'Apple MacBook Pro ',
+      price: 1200,
+      description: '14" M1 Pro 10C /16C GPU /16GB /1TB /Space Gray /2021',
+      image: '../public/macbook.webp',
       quantity: 0
     },
     {
-      title: 'Product 3',
+      title: 'Apple Studio Display',
       price: 300,
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vulputate dignissim suspendisse in est. Vel risus commodo viverra maecenas accumsan. Donec et odio pellentesque diam volutpat. Mauris vitae ultricies leo integer malesuada nunc vel risus commodo.',
-      image: 'https://picsum.photos/300?seed=3',
+      description: '27-inch 5K Retina Display with True Tone',
+      image: '../public/studioDisplay.webp',
+      quantity: 0
+    },
+    {
+      title: 'Apple AirPods Pro 2',
+      price: 300,
+      description: 'MagSafe, with spatial audio and adaptive EQ',
+      image: '../public/iPod.webp',
+      quantity: 0
+    },
+      {
+      title: 'Apple Watch Ultra',
+      price: 300,
+      description: 'Titanium Case with Orange Alpine Loop ',
+      image: '../public/iWatch.webp',
+      quantity: 0
+    },
+      {
+      title: 'Apple iPad Pro',
+      price: 300,
+      description: '12.9-inch M2 Chip 1TB WiFi + Cellular Space Grey',
+      image: '../public/iPad.webp',
       quantity: 0
     },
   ];
