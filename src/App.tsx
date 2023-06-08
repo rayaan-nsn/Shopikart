@@ -71,7 +71,7 @@ function App() {
       <>
         <div className="text-center overflow-hidden">
           {/*<h1 className="m-3">Shopikart</h1>*/}
-          <img className="" src="../public/logo.png" style={{height:"80px"}}/>
+          <img className="" src="logo.png" style={{height:"80px"}}/>
           <div className="row align-items-start">
             <div className="col-8 p-0 m-0" style={{width:"70%"}}>
               <div className="row m-auto">
